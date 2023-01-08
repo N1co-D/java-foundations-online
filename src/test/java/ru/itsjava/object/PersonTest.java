@@ -1,4 +1,5 @@
 package ru.itsjava.object;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -55,7 +56,7 @@ public class PersonTest {
 //        }
 //    }
 
-        @DisplayName(" корректно проверять возраст человека перед покупкой пива")
+    @DisplayName(" корректно проверять возраст человека перед покупкой пива")
     @Test
     public void shouldHaveCorrectCheckingPersonAgeForTakingBeer() {
         Person teacherOfGroup1 = new Person(DEFAULT_NAME, DEFAULT_AGE);
