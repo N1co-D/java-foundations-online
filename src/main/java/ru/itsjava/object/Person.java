@@ -1,5 +1,4 @@
 package ru.itsjava.object;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
