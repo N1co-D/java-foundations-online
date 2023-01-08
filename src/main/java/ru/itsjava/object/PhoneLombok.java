@@ -10,5 +10,4 @@ public class PhoneLombok {
     private int storage;
     private boolean modul5G;
     private boolean nfc;
-
 }
