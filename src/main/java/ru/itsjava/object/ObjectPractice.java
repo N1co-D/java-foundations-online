@@ -2,14 +2,6 @@ package ru.itsjava.object;
 
 public class ObjectPractice {
     public static void main(String[] args) {
-//        Object obj1 = new Object();
-//        Object obj2 = new Object(); //ctrl + d
-//
-//        System.out.println(obj1 == obj2);
-//        System.out.println("obj1.equals(obj2) = " + obj1.equals(obj2));
-//
-//        obj2 = obj1;
-//        System.out.println("obj1.equals(obj2) = " + obj1.equals(obj2));
 
         Dog bobik = new Dog("Бобик", 4);
         Dog bobik2 = new Dog("Бобик", 4);
