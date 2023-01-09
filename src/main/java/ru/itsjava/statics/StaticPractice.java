@@ -17,11 +17,14 @@ public class StaticPractice {
 //
 //        System.out.println("SALARY_CEO = " + Salary.SALARY_CEO);
 
-        Car lada = new Car("Lada", "black", 600_000);
-        Car audi = new Car("Audi", "red", 3_000_000);
+        Car lada = new Car("Lada", "black");
+        Car audi = new Car("Audi", "red");
 
         System.out.println("lada = " + lada);
         System.out.println("audi = " + audi);
+
+        System.out.println("lada.getPrice() = " + lada.getPrice());
+        System.out.println("audi.getPrice() = " + audi.getPrice());
 
     }
 
