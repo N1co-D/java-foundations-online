@@ -35,7 +35,6 @@ public class ObjectPractice {
         System.out.println(iPhone13ProMaxSilver);
         iPhone13ProMaxSilver.setStorage(256);
         System.out.println("iPhone13ProMaxSilver.getStorage() = " + iPhone13ProMaxSilver.getStorage());
-
     }
 
 }

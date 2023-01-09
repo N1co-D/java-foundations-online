@@ -30,7 +30,6 @@ public class PhoneLombokTest {
         PhoneLombok actualIphone = new PhoneLombok(DEFAULT_MODEL, DEFAULT_STORAGE, DEFAULT_MODUL5G, DEFAULT_NFC);
         actualIphone.setStorage(CORRECTED_STORAGE);
         Assertions.assertEquals(CORRECTED_STORAGE, actualIphone.getStorage());
-
     }
 
 }
