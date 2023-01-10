@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 public class PersonTest {
 
     public static final String NEW_NAME = "Александр";
-    public static final int NEW_AGE = 40;
+    public static final int NEW_AGE = 17;
     public static final String DEFAULT_NAME = "Иван";
     public static final int DEFAULT_AGE = 30;
 
@@ -36,7 +36,7 @@ public class PersonTest {
         Assertions.assertEquals(NEW_AGE, teacherOfGroup1.getAge());
     }
 
-    @DisplayName(" корректно изменять возраст человека в день Рождения")
+    @DisplayName(" корректно изменять возраст человека в День Рождения")
     @Test
     public void shouldHaveCorrectUpdatePersonAgeIfBirthsday() {
         Person teacherOfGroup1 = new Person(DEFAULT_NAME, DEFAULT_AGE);
@@ -56,16 +56,25 @@ public class PersonTest {
 //        }
 //    }
 
+//    @DisplayName(" корректно проверять возраст человека перед покупкой пива")
+//    @Test
+//    public void shouldHaveCorrectCheckingPersonAgeForTakingBeer() {
+//        Person teacherOfGroup1 = new Person(DEFAULT_NAME, DEFAULT_AGE);
+//        teacherOfGroup1.takeBeer();
+//        if (DEFAULT_AGE > 18) {
+//            Assertions.assertTrue(teacherOfGroup1.takeBeer());
+//        } else {
+//            Assertions.assertFalse(teacherOfGroup1.takeBeer());
+//        }
+//    }
+
     @DisplayName(" корректно проверять возраст человека перед покупкой пива")
     @Test
     public void shouldHaveCorrectCheckingPersonAgeForTakingBeer() {
-        Person teacherOfGroup1 = new Person(DEFAULT_NAME, DEFAULT_AGE);
-        teacherOfGroup1.takeBeer();
-        if (DEFAULT_AGE > 18) {
-            Assertions.assertTrue(teacherOfGroup1.takeBeer());
-        } else {
-            Assertions.assertFalse(teacherOfGroup1.takeBeer());
-        }
+        Person actualTeacherOfGroup1 = new Person(DEFAULT_NAME, DEFAULT_AGE);
+        Person newTeacherOfGroup1 = new Person(NEW_NAME, NEW_AGE);
+        Assertions.assertTrue(actualTeacherOfGroup1.takeBeer());
+        Assertions.assertFalse(newTeacherOfGroup1.takeBeer());
     }
 
 }
