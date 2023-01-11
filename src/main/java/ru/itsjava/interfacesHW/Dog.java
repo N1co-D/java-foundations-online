@@ -7,7 +7,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class Dog implements Walkable, Runnable, Swimable {
     private int maxRunDistance;
-    private int maxSwimDistance;
+    private int maxSwimSpeed;
 
     @Override
     public void run() {
@@ -31,9 +31,6 @@ public class Dog implements Walkable, Runnable, Swimable {
 
     @Override
     public double maxSwimSpeed() {
-        return maxSwimDistance;
+        return maxSwimSpeed;
     }
-
-
-
 }

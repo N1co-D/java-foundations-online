@@ -22,5 +22,4 @@ public class Cat implements Walkable, Runnable {
     public void walk() {
         System.out.println("Люблю гулять по крышам!");
     }
-
 }
