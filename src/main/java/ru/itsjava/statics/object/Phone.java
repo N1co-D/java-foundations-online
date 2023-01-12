@@ -1,4 +1,4 @@
-package ru.itsjava.object;
+package ru.itsjava.statics.object;
 
 public class Phone {
     private final String model;

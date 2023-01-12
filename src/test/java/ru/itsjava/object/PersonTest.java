@@ -3,6 +3,7 @@ package ru.itsjava.object;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import ru.itsjava.statics.object.Person;
 
 @DisplayName("Класс Person должен: ")
 public class PersonTest {

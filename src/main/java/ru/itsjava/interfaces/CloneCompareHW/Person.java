@@ -1,28 +1,34 @@
 package ru.itsjava.interfaces.CloneCompareHW;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 
 @AllArgsConstructor
-@Data
-public class Person implements Comparable {
+public class Person implements Comparable<Person>, Cloneable {
     private String name;
     private final String surname;
     private double age;
 
     @Override
     public int compareTo(Person person) {
-        if (surname == person.surname) {
-            return 0;
+        int result = surname.compareTo(person.surname);
+        if (result == 0) {
+//            System.out.println("Фамилии одинаковы, следовательно сравниваем имена!");
+//            System.out.println("Если результат = 0, человек сравнивается сам с собой. Если результат меньше 0, значит имя первого человека лексикографически меньше имени второго человека. Если больше 0, то наоборот.");
+            return name.compareTo(person.name);
         } else {
-            return 1;
+//            System.out.println("Фамилии разные, следовательно сравниваем разницу в возрасте!");
+//            System.out.println("Если результат = 0, люди ровесники. Если ответ больше 0, то первый человек старше на итоговый результат. Если ответ меньше 0, значит возраст второго человека выше возраста первого человека на результат в модуле.");
+            return (int) (age - person.age);
         }
     }
-}
 
-//1. Создать класс Person ( Поля: Имя, Фамилия и возраст)
-//2. Реализовать интерфейс Comparable. Реализовать метод compareTo(), который будет сравнивать человека по фамилии,
-//   если фамилии одинаковые, то по имени, в ином случае по возрасту.
-//3. В классе Main добавить в массив несколько человек. Отсортировать и вывести на экран.
-//4. В классе Person реализовать метод clone()
-//5. В классе Main создать клона некоторого Person.
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+    @Override
+    public String toString(){
+        return "Person {" + name + " " + surname + ", " + (int) age + "}";
+    }
+
+}
