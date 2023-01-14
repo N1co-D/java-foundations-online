@@ -9,6 +9,11 @@ public class Rectangle extends Figure {
         this.secondSideLengthOfRectangle = secondSideLengthOfRectangle;
     }
 
+    @Override
+    void getFigureName() {
+        System.out.println("Эта фигура - прямоугольник!");
+    }
+
     public void printPerimeter() {
         int perimeter = (firstSideLengthOfRectangle + secondSideLengthOfRectangle) * 2;
         System.out.println("Периметр прямоугольника = " + perimeter);

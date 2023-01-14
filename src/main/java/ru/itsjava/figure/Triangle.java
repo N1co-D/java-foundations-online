@@ -11,6 +11,11 @@ public class Triangle extends Figure {
         this.thirdSideLengthOfTriangle = thirdSideLengthOfTriangle;
     }
 
+    @Override
+    void getFigureName() {
+        System.out.println("Эта фигура - треугольник!");
+    }
+
     public void printPerimeter() {
         int perimeter = firstSideLengthOfTriangle + secondSideLengthOfTriangle + thirdSideLengthOfTriangle;
         System.out.println("Периметр треугольника = " + perimeter);

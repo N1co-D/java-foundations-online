@@ -7,6 +7,11 @@ public class Square extends Figure {
         this.sideLengthOfSquare = sideLengthOfSquare;
     }
 
+    @Override
+    void getFigureName() {
+        System.out.println("Эта фигура - квадрат!");
+    }
+
     public void printPerimeter() {
         int perimeter = sideLengthOfSquare * 4;
         System.out.println("Периметр квадрата = " + perimeter);

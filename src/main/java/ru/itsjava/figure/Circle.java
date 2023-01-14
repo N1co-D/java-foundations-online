@@ -7,6 +7,11 @@ public class Circle extends Figure {
         this.radius = radius;
     }
 
+    @Override
+    void getFigureName() {
+        System.out.println("Эта фигура - круг/окружность!");
+    }
+
     public void printPerimeter() {
         double perimeter = 2 * PI * radius;
         System.out.println("Периметр круга = " + perimeter);
