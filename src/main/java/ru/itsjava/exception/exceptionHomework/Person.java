@@ -12,15 +12,24 @@ public class Person {
         this.age = checkingAge(age);
     }
 
+//    public int checkingAge(int age) throws AgeNotValidException {
+//        if (age < 0 || age > 150) {
+//            try {
+//                return age / 0;
+//            } catch (ArithmeticException arithmeticException) {
+//                throw new AgeNotValidException("Неправильно указан возраст!");
+//            }
+//        } else {
+//            return age;
+//        }
+//    }
+
     public int checkingAge(int age) throws AgeNotValidException {
         if (age < 0 || age > 150) {
-            try {
-                return age / 0;
-            } catch (ArithmeticException arithmeticException) {
-                throw new AgeNotValidException("Неправильно указан возраст!");
-            }
+            throw new AgeNotValidException("Неправильно указан возраст!");
         } else {
             return age;
         }
     }
+
 }
