@@ -7,8 +7,8 @@ public class Main {
         Person vladimir = new Person("Vladimir", 30);
         System.out.println("vladimir.getAge() = " + vladimir.getAge());
 
-        Person maria = new Person("Maria", 200);
-        System.out.println("maria.getAge() = " + maria.getAge());
+//        Person maria = new Person("Maria", 200);
+//        System.out.println("maria.getAge() = " + maria.getAge());
 
     }
 
