@@ -12,9 +12,9 @@ public class Person {
         this.age = checkingAge(age);
     }
 
-//    public int checkingAge(int age) throws AgeNotValidException {
+//    public int checkingAge(int age) {
 //        if (age < 0 || age > 150) {
-//            try {
+//            try {                                                                любой код,  который может выкинуть exception
 //                return age / 0;
 //            } catch (ArithmeticException arithmeticException) {
 //                throw new AgeNotValidException("Неправильно указан возраст!");
@@ -24,7 +24,7 @@ public class Person {
 //        }
 //    }
 
-    public int checkingAge(int age) throws AgeNotValidException {
+    public int checkingAge(int age) throws AgeNotValidException { //обработка(try-catch) Exception происходит вне этого метода
         if (age < 0 || age > 150) {
             throw new AgeNotValidException("Неправильно указан возраст!");
         } else {
