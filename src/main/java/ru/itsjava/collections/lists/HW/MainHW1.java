@@ -3,7 +3,7 @@ package ru.itsjava.collections.lists.HW;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class MainHW1 {
     public static void main(String[] args) {
 
         Book thinkingFastAndSlow = new Book("Thinking, Fast And Slow", "Daniel Kahneman", 499);
