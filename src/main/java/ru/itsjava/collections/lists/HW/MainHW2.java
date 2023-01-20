@@ -172,6 +172,25 @@ public class MainHW2 {
             }
         }
 
+        System.out.println();
+
+        //Найти средний возраст всех женщин
+        System.out.println("Найти средний возраст всех женщин:");
+        System.out.println("Перечень женщин в коллекции peopleList:");
+        double sumAge = 0;
+        double womanCount = 0;
+        for (int i = 0; i < peopleList.size(); i++) {
+            if (peopleList.get(i).isMale() == false) {
+                System.out.print(i + ". ");
+                System.out.println(peopleList.get(i));
+                sumAge += peopleList.get(i).getAge();
+                womanCount++;
+            }
+        }
+        System.out.println("Суммарный возраст всех женщин = " + sumAge);
+        System.out.println("Количество всех женщин = " + womanCount);
+        System.out.println("Средний возраст всех женщин = " + (sumAge/womanCount));
+
     }
 
 }
