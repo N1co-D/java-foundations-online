@@ -123,6 +123,55 @@ public class MainHW2 {
             }
         }
 
+        System.out.println();
+
+        Person maria = new Person("Maria", 18, false);
+        Person harold = new Person("Harold", 21, true);
+        Person andrey = new Person("Andrey", 46, true);
+        Person henry = new Person("Henry", 87, true);
+        Person daria = new Person("Daria", 14, false);
+        Person harry = new Person("Harry", 22, true);
+        Person daniil = new Person("Daniil", 41, true);
+        Person john = new Person("John", 54, true);
+        Person olga = new Person("Olga", 32, false);
+        Person hamlet = new Person("Hamlet", 40, true);
+
+        List<Person> peopleList = new ArrayList<>();
+
+        peopleList.add(maria);
+        peopleList.add(harold);
+        peopleList.add(andrey);
+        peopleList.add(henry);
+        peopleList.add(daria);
+        peopleList.add(harry);
+        peopleList.add(daniil);
+        peopleList.add(john);
+        peopleList.add(olga);
+        peopleList.add(hamlet);
+
+        System.out.println("Коллекция people состоит из:");
+        int index6 = 0;
+        for (Person personElement : peopleList) {
+            System.out.print(index6 + ". ");
+            System.out.println(personElement);
+            index6++;
+        }
+
+        System.out.println();
+
+        //Вернуть всех военнообязанных мужчин (пол), которым меньше 27 и больше 18 и имя которых начинается на 'Н'
+        System.out.println("Вернуть всех военнообязанных мужчин (пол), которым меньше 27 и больше 18 и имя которых начинается на 'Н':");
+        int index7 = 0;
+        for (int i = 0; i < peopleList.size(); i++) {
+            if (peopleList.get(index7).isMale() == true && peopleList.get(index7).getAge() < 27 && peopleList.get(index7).getAge() > 18 && peopleList.get(index7).getName().charAt(0) == 'H') {
+                System.out.print(index7 + ". ");
+                System.out.println(peopleList.get(index7));
+                index7++;
+            } else {
+                index7++;
+            }
+        }
+
     }
 
 }
