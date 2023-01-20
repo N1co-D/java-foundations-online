@@ -41,7 +41,7 @@ public class MainHW2 {
         System.out.println();
 
         //Отфильтровать список вернуть записи по некоторому условию: индекс делится на 3
-        System.out.println("Отфильтровать список вернуть записи по некоторому условию: индекс делится на 3:");
+        System.out.println("Отфильтровать список вернуть записи по условию - индекс делится на 3:");
         int index2 = 0;
         for (Book bookElement : bookList) {
             if (index2 % 3 == 0) {
@@ -56,10 +56,10 @@ public class MainHW2 {
         System.out.println();
 
         //Отфильтровать список вернуть записи по некоторому условию: вернуть количество книг, которые равны "Java"
-        System.out.println("Отфильтровать список вернуть записи по некоторому условию: вернуть количество книг, которые равны Java:");
+        System.out.println("Отфильтровать список вернуть записи по условию - вернуть количество книг, которые равны Java:");
         int javaBookCount = 0;
         for (int i = 0; i < bookList.size(); i++) {
-            if (bookList.get(i).getName() == "Java") {
+            if (bookList.get(i).getName().equals("Java")) {
                 javaBookCount++;
             }
         }
@@ -69,14 +69,10 @@ public class MainHW2 {
 
         //Пропустить первые 3 книги в списке
         System.out.println("Пропустить первые 3 книги в списке:");
-        int index3 = 0;
         for (int i = 0; i < bookList.size(); i++) {
-            if (index3 < 3) {
-                index3++;
-            } else {
-                System.out.print(index3 + ". ");
-                System.out.println(bookList.get(index3));
-                index3++;
+            if (i > 2) {
+                System.out.print(i + ". ");
+                System.out.println(bookList.get(i));
             }
         }
 
@@ -84,16 +80,13 @@ public class MainHW2 {
 
         //Пропустить первые 2 книги, которые равные "Java"
         System.out.println("Пропустить первые 2 книги, которые равные Java:");
-        int index4 = 0;
         int javaBookCount2 = 0;
         for (int i = 0; i < bookList.size(); i++) {
-            if (javaBookCount2 < 2 && bookList.get(index4).getName() == "Java") {
-                index4++;
+            if (javaBookCount2 < 2 && bookList.get(i).getName().equals("Java")) {
                 javaBookCount2++;
             } else {
-                System.out.print(index4 + ". ");
-                System.out.println(bookList.get(index4));
-                index4++;
+                System.out.print(i + ". ");
+                System.out.println(bookList.get(i));
             }
         }
 
@@ -112,14 +105,10 @@ public class MainHW2 {
 
         //Возвратить все книги, длина автора которых делится на 3
         System.out.println("Возвратить все книги, длина автора которых делится на 3:");
-        int index5 = 0;
         for (int i = 0; i < bookList.size(); i++) {
             if (bookList.get(i).getAuthor().length() % 3 == 0) {
-                System.out.print(index5 + ". ");
-                System.out.println(bookList.get(index5) + ", длина автора = " + bookList.get(i).getAuthor().length());
-                index5++;
-            } else {
-                index5++;
+                System.out.print(i + ". ");
+                System.out.println(bookList.get(i) + ", длина автора = " + bookList.get(i).getAuthor().length());
             }
         }
 
@@ -150,25 +139,21 @@ public class MainHW2 {
         peopleList.add(hamlet);
 
         System.out.println("Коллекция people состоит из:");
-        int index6 = 0;
+        int index3 = 0;
         for (Person personElement : peopleList) {
-            System.out.print(index6 + ". ");
+            System.out.print(index3 + ". ");
             System.out.println(personElement);
-            index6++;
+            index3++;
         }
 
         System.out.println();
 
         //Вернуть всех военнообязанных мужчин (пол), которым меньше 27 и больше 18 и имя которых начинается на 'Н'
         System.out.println("Вернуть всех военнообязанных мужчин (пол), которым меньше 27 и больше 18 и имя которых начинается на 'Н':");
-        int index7 = 0;
         for (int i = 0; i < peopleList.size(); i++) {
-            if (peopleList.get(index7).isMale() == true && peopleList.get(index7).getAge() < 27 && peopleList.get(index7).getAge() > 18 && peopleList.get(index7).getName().charAt(0) == 'H') {
-                System.out.print(index7 + ". ");
-                System.out.println(peopleList.get(index7));
-                index7++;
-            } else {
-                index7++;
+            if (peopleList.get(i).isMale() == true && peopleList.get(i).getAge() < 27 && peopleList.get(i).getAge() > 18 && peopleList.get(i).getName().charAt(0) == 'H') {
+                System.out.print(i + ". ");
+                System.out.println(peopleList.get(i));
             }
         }
 
@@ -189,7 +174,7 @@ public class MainHW2 {
         }
         System.out.println("Суммарный возраст всех женщин = " + sumAge);
         System.out.println("Количество всех женщин = " + womanCount);
-        System.out.println("Средний возраст всех женщин = " + (sumAge/womanCount));
+        System.out.println("Средний возраст всех женщин = " + (sumAge / womanCount));
 
     }
 
