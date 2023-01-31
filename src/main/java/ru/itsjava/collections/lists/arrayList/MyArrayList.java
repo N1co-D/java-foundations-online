@@ -14,17 +14,25 @@ public class MyArrayList {
         return realSize;
     }
 
+//    public boolean isEmpty() {
+//        for (int i = 0; i < array.length; i++) {
+//            if (array[i] != null) {
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+
     public boolean isEmpty() {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] != null) {
-                return false;
-            }
+        if (realSize == 0) {
+            return true;
+        } else {
+            return false;
         }
-        return true;
     }
 
     public boolean contains(Object o) {
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < realSize; i++) {
             if (array[i] == o) {
                 return true;
             }
@@ -48,7 +56,7 @@ public class MyArrayList {
     }
 
     public void clear() {
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < realSize; i++) {
             array[i] = null;
         }
     }
