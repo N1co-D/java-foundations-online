@@ -17,12 +17,10 @@ public class PhoneServiceImpl implements PhoneService {
                 resPhone = phone;
             }
         }
-
         if (resPhone != null) {
             phonesFromStore.remove(resPhone);
             return resPhone;
         }
-
         return null;
     }
 
