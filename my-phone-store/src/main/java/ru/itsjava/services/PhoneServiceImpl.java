@@ -21,7 +21,7 @@ public class PhoneServiceImpl implements PhoneService {
             phonesFromStore.remove(resPhone);
             return resPhone;
         }
-        return null;
+        return resPhone;
     }
 
     @Override
