@@ -185,7 +185,7 @@ public class MyArrayList {
     @Override
     public String toString() {
 //        return "MyArrayList{" + Arrays.toString(array) + '}';
-        StringBuilder stringBuilder = new StringBuilder("MyArrayList{ ");
+        StringBuilder stringBuilder = new StringBuilder("MyArrayList{ "); //stringbuilder
         for (int i = 0; i < realSize; i++) {
             stringBuilder.append(array[i]).append(' ');
         }
