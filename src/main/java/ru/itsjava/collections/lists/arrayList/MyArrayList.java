@@ -3,10 +3,10 @@ package ru.itsjava.collections.lists.arrayList;
 public class MyArrayList {
     private int realSize;
     private static final int DEFAULT_CAPACITY = 10;
-    private Object[] array;                                 //?
+    private Object[] array;
 
     public MyArrayList() {
-        array = new Object[DEFAULT_CAPACITY];               //?
+        array = new Object[DEFAULT_CAPACITY];
         realSize = 0;
     }
 
@@ -31,29 +31,13 @@ public class MyArrayList {
         return false;
     }
 
-//    public boolean add(Object o) {         //?
-//        if (realSize == array.length) {
-//            Object[] resArray = new Object[array.length * 3 / 2 + 1];
-//            //копирование массива
-//            System.arraycopy(array, 0, resArray, 0, array.length);
-//            array = resArray;
-//        }
-//        array[realSize++] = o; //вставка нашего элемента
-//        return true;
-//    }
-
-    public boolean add(Object o) {         //?
-        if (realSize >= array.length) {
+    public boolean add(Object o) {
+        if (realSize == array.length) {
             Object[] resArray = new Object[array.length * 3 / 2 + 1];
-            //копирование массива
-            for (int i = 0; i < array.length; i++) {
-                resArray[i] = array[i];
-            }
+            System.arraycopy(array, 0, resArray, 0, array.length);
             array = resArray;
-            //вставка нашего элемента
         }
-        array[realSize] = o;
-        realSize++;
+        array[realSize++] = o;
         return true;
     }
 
@@ -68,7 +52,6 @@ public class MyArrayList {
         for (int i = delIndex; i < array.length - 1; i++) {
             array[i] = array[i + 1];
         }
-
         if (delIndex == -1) {
             return false;
         } else {
@@ -85,8 +68,7 @@ public class MyArrayList {
 
     public Object get(int index) {
         checkIndex(index);
-        Object resElement = array[index];
-        return resElement;
+        return array[index];
     }
 
     public Object set(int index, Object element) {
@@ -95,34 +77,8 @@ public class MyArrayList {
         return element;
     }
 
-//    public void add (int index, Object element) {
-//        Object[] resArray = new Object[array.length + 1];
-//        for (int i = 0; i < index; i++) {
-//            resArray[i] = array[i];
-//        }
-//        resArray[index] = element;
-//        for (int i = index + 1; i <= array.length; i++) {
-//            resArray[i] = array[i - 1];
-//        }
-//    }
-
-//    public void add(int index, Object element) {
-//        if (realSize == array.length) {
-//            Object[] resArray = new Object[array.length + 1];
-//            int count = 0;
-//            for (int i = 0; i < resArray.length - 1; i++) {
-//                if (i == index) {
-//                    resArray[i] = element;
-//                } else {
-//                    resArray[i] = array[count];
-//                    count++;
-//                }
-//            }
-//        }
-//        realSize++;
-//    }
-
     public void add(int index, Object element) {
+        checkIndex(index);
         Object[] resArray = new Object[array.length + 1];
         for (int i = 0; i < index; i++) {
             resArray[i] = array[i];
@@ -138,11 +94,6 @@ public class MyArrayList {
     public Object remove(int index) {
         checkIndex(index);
         Object resElement = array[index];
-
-//        for (int i = 0; i < array.length - 1; i++) {
-//            array[i] = array[i + 1];
-//        }
-
         if (array.length - 1 - index >= 0) {
             System.arraycopy(array, index + 1, array, index, array.length - 1 - index);
         }
@@ -157,7 +108,7 @@ public class MyArrayList {
     }
 
     private boolean isCorrectIndex(int index) {
-        if (index > -1 || index < realSize) {
+        if (index > -1 && index < realSize) {
             return true;
         }
         return false;
@@ -185,7 +136,7 @@ public class MyArrayList {
     @Override
     public String toString() {
 //        return "MyArrayList{" + Arrays.toString(array) + '}';
-        StringBuilder stringBuilder = new StringBuilder("MyArrayList{ "); //stringbuilder
+        StringBuilder stringBuilder = new StringBuilder("MyArrayList{ ");
         for (int i = 0; i < realSize; i++) {
             stringBuilder.append(array[i]).append(' ');
         }

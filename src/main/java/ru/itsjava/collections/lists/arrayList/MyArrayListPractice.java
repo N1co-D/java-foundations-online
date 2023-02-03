@@ -22,6 +22,8 @@ public class MyArrayListPractice {
         System.out.println("list.size() = " + list.size());
         System.out.println("list.toString() = " + list);
 
+        System.out.println();
+
 //        MyArrayList list2 = new MyArrayList();
 //
 //        System.out.println("list2.isEmpty() = " + list2.isEmpty());
@@ -43,16 +45,22 @@ public class MyArrayListPractice {
         System.out.println("list.remove(\"Bye7\") = " + list.remove("Bye7"));
         System.out.println("list = " + list);
 
+        System.out.println();
+
         System.out.println("list.indexOf(\"Hello\") = " + list.indexOf("Hello"));
         System.out.println("list.indexOf(\"Bye4\") = " + list.indexOf("Bye4"));
 
         System.out.println("list.lastIndexOf(\"Bye8\") = " + list.lastIndexOf("Bye8"));
+
+        System.out.println();
 
         System.out.println("list.get(4) = " + list.get(4));
         System.out.println("list.get(0) = " + list.get(0));
 
         System.out.println("list.set(7,\"Hello_again\") = " + list.set(7, "Hello_again"));
         System.out.println("list = " + list);
+
+        System.out.println();
 
         System.out.println("list.size() = " + list.size());
         list.add(4, "Goodbye");
