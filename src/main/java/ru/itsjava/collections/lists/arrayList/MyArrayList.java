@@ -107,7 +107,7 @@ public class MyArrayList {
         }
     }
 
-    private boolean isCorrectIndex(int index) {
+    public boolean isCorrectIndex(int index) { // было private
         if (index > -1 && index < realSize) {
             return true;
         }
