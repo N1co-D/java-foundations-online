@@ -14,11 +14,7 @@ public class MyArrayListPracticeTest {
         MyArrayList list = new MyArrayList();
         list.add("Hello");
         list.add("Bye");
-        int size = 0;
-        for (int i = 0; i < list.size(); i++) {
-            size++;
-        }
-        Assertions.assertEquals(list.size(), size);
+        Assertions.assertEquals(list.size(), 2);
     }
 
     @DisplayName(" делать выводы о том, является ли массив пустым")
@@ -42,31 +38,56 @@ public class MyArrayListPracticeTest {
         Assertions.assertEquals(list.contains("Daniil"), false);
     }
 
+//    @DisplayName(" проверять добавление элемента внутрь массива")
+//    @Test
+//    public void shouldHaveCorrectMethodAdd() {
+//        MyArrayList list = new MyArrayList();
+//        Assertions.assertEquals(list.add("Hello"), list.contains("Hello"));
+//    }
+
     @DisplayName(" проверять добавление элемента внутрь массива")
     @Test
     public void shouldHaveCorrectMethodAdd() {
         MyArrayList list = new MyArrayList();
-        Assertions.assertEquals(list.add("Hello"), list.contains("Hello"));
+        list.add("Hello");
+        Assertions.assertEquals(list.contains("Hello"), true);
     }
+
+//    @DisplayName(" проверять удаление элемента из массива")
+//    @Test
+//    public void shouldHaveCorrectMethodRemove() {
+//        MyArrayList list = new MyArrayList();
+//        list.add("Hello");
+//        Assertions.assertEquals(list.remove("Hello"), !list.contains("Hello"));
+//    }
 
     @DisplayName(" проверять удаление элемента из массива")
     @Test
     public void shouldHaveCorrectMethodRemove() {
         MyArrayList list = new MyArrayList();
         list.add("Hello");
-        Assertions.assertEquals(list.remove("Hello"), !list.contains("Hello"));
+        list.remove("Hello");
+        Assertions.assertEquals(list.contains("Hello"), false);
     }
+
+//    @DisplayName(" очищать массив")
+//    @Test
+//    public void shouldHaveCorrectMethodClear() {
+//        MyArrayList list = new MyArrayList();
+//        list.add("Hello");
+//        list.clear();
+//        for (int i = 0; i < list.size(); i++) {
+//            Assertions.assertEquals(list.get(i), null);
+//        }
+//    }
 
     @DisplayName(" очищать массив")
     @Test
     public void shouldHaveCorrectMethodClear() {
         MyArrayList list = new MyArrayList();
         list.add("Hello");
-        list.add("Bye");
         list.clear();
-        for (int i = 0; i < list.size(); i++) {
-            Assertions.assertEquals(list.get(i), null);
-        }
+        Assertions.assertEquals(list.get(0), null);
     }
 
     @DisplayName(" получать элемент массива по индексу")
@@ -82,16 +103,16 @@ public class MyArrayListPracticeTest {
     public void shouldHaveCorrectMethodSet() {
         MyArrayList list = new MyArrayList();
         list.add("Hello");
-        Assertions.assertEquals(list.set(0, "Bye"), "Bye");
+        list.set(0, "Bye");
+        Assertions.assertEquals(list.get(0), "Bye");
     }
 
     @DisplayName(" проверять добавление элемента внутрь массива по индексу")
     @Test
     public void shouldHaveCorrectMethodAddWithIndex() {
         MyArrayList list = new MyArrayList();
-        list.add("Hello");
-        list.add("Bye");
-        list.add(1, "Student");
+        list.add("Teacher");
+        list.add(0, "Student");
         Assertions.assertEquals(list.contains("Student"), true);
     }
 
@@ -99,9 +120,9 @@ public class MyArrayListPracticeTest {
     @Test
     public void shouldHaveCorrectMethodRemoveWithIndex() {
         MyArrayList list = new MyArrayList();
-        list.add("Hello");
-        list.add("Bye");
-        Assertions.assertEquals(list.remove(1), "Bye");
+        list.add("Student");
+        list.remove(0);
+        Assertions.assertEquals(list.contains("Student"), false);
     }
 
     @DisplayName(" проверять корректность индекса")
