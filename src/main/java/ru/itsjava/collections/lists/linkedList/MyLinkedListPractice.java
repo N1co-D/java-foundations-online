@@ -18,6 +18,7 @@ public class MyLinkedListPractice {
         System.out.println();
 
         MyLinkedList listEmpty = new MyLinkedList();
+        System.out.println("listEmpty.size() = " + listEmpty.size());
         System.out.println("listEmpty.isEmpty() = " + listEmpty.isEmpty());
 
         System.out.println();

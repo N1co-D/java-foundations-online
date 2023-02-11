@@ -4,13 +4,16 @@ public class MyLinkedList {
     private Node head;
 
     public int size() {
-        Node curNode = head;
-        int size = 0;
-        while (curNode.getNext() != null) {
-            curNode = curNode.getNext();
-            size++;
+        if (head != null) {
+            Node curNode = head;
+            int size = 0;
+            while (curNode.getNext() != null) {
+                curNode = curNode.getNext();
+                size++;
+            }
+            return size + 1;
         }
-        return size + 1;
+        return 0;
     }
 
     public boolean isEmpty() {
@@ -21,12 +24,14 @@ public class MyLinkedList {
     }
 
     public boolean contains(Object o) {
-        Node curNode = head;
-        while (curNode.getNext() != null) {
-            if (curNode.getValue() == o) {
-                return true;
+        if (head != null) {
+            Node curNode = head;
+            while (curNode.getNext() != null) {
+                if (curNode.getValue() == o) {
+                    return true;
+                }
+                curNode = curNode.getNext();
             }
-            curNode = curNode.getNext();
         }
         return false;
     }
