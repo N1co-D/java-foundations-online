@@ -77,17 +77,35 @@ public class MyArrayList {
         return element;
     }
 
+//    public void add(int index, Object element) {
+//        checkIndex(index);
+//        Object[] resArray = new Object[array.length + 1];
+//        for (int i = 0; i < index; i++) {
+//            resArray[i] = array[i];
+//        }
+//        resArray[index] = element;
+//        for (int j = index + 1; j < resArray.length; j++) {
+//            resArray[j] = array[j - 1];
+//        }
+//        array = resArray;
+//        realSize++;
+//    }
+
     public void add(int index, Object element) {
         checkIndex(index);
-        Object[] resArray = new Object[array.length + 1];
-        for (int i = 0; i < index; i++) {
-            resArray[i] = array[i];
+        if (realSize == array.length) {
+            Object[] resArray = new Object[array.length * 3 / 2 + 1];
+            System.arraycopy(array, 0, resArray, 0, index);
+            resArray[index] = element;
+            if (array.length + 1 - (index + 1) >= 0)
+                System.arraycopy(array, index + 1 - 1, resArray, index + 1, array.length + 1 - (index + 1));
+            array = resArray;
+        } else {
+            for (int i = realSize; i > index; i--) {
+                array[i] = array[i - 1];
+            }
+            array[index] = element;
         }
-        resArray[index] = element;
-        for (int j = index + 1; j < resArray.length; j++) {
-            resArray[j] = array[j - 1];
-        }
-        array = resArray;
         realSize++;
     }
 
