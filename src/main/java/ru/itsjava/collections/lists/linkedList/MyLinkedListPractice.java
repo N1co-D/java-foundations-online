@@ -25,6 +25,11 @@ public class MyLinkedListPractice {
 
         System.out.println("list.contains(\"Hello 1\") = " + list.contains("Hello 1"));
         System.out.println("list.contains(\"Bye\") = " + list.contains("Bye"));
+
+        System.out.println();
+
+        System.out.println("list.remove(3) = " + list.remove(3));
+        System.out.println("list = " + list);
     }
 
 }
