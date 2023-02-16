@@ -81,14 +81,13 @@ public class MyLinkedList {
         isCorrectIndex(index);
         if (!isEmpty()) {
             Node curNode = head;
-            Object resValue = element;
             int count = 0;
             while (count != index) {
                 curNode = curNode.getNext();
                 count++;
             }
             curNode.setValue(element);
-            return resValue;
+            return curNode.getValue();
         }
         return null;
     }
