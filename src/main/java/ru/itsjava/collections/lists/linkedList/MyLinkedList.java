@@ -55,14 +55,41 @@ public class MyLinkedList {
     }
 
     public void clear() {
-
+        if (!isEmpty()) {
+            head = null;
+            System.out.println("Complete!");
+        } else {
+            System.out.println("Already empty!");
+        }
     }
 
     public Object get(int index) {
+        isCorrectIndex(index);
+        if (!isEmpty()) {
+            Node curNode = head;
+            int count = 0;
+            while (count != index) {
+                curNode = curNode.getNext();
+                count++;
+            }
+            return curNode.getValue();
+        }
         return null;
     }
 
     public Object set(int index, Object element) {
+        isCorrectIndex(index);
+        if (!isEmpty()) {
+            Node curNode = head;
+            Object resValue = element;
+            int count = 0;
+            while (count != index) {
+                curNode = curNode.getNext();
+                count++;
+            }
+            curNode.setValue(element);
+            return resValue;
+        }
         return null;
     }
 
@@ -119,7 +146,7 @@ public class MyLinkedList {
         }
     }
 
-    public boolean isCorrectIndex(int index) { // было private
+    public boolean isCorrectIndex(int index) {
         if (index > -1 && index < size()) {
             return true;
         }
