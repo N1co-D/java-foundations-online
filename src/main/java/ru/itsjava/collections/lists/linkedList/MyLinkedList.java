@@ -51,7 +51,34 @@ public class MyLinkedList {
     }
 
     public boolean remove(Object o) {
-        return false;
+        if (head == null) return false; //если первый элемент списка отсутствует, то и удалять нечего
+
+        if (head.getValue().equals(o)) { //если удаляемый элемент стоит в начале списка
+            head = head.getNext(); //мы вместо него указываем ссылку на элемент, стоящий после него
+            return true;
+        }
+
+        if (head.getNext() == null) { //если отсутствуют элементы кроме первого (который удалять не требуется), то и удалять нечего
+            return false;
+        }
+
+        Node curNode = head; //создание узла, который будет прогоняться по списку и после удаляться
+        Node prevNode = head; //создание узла со значением элемента, стоящим до удаляемого
+
+        while ((curNode = curNode.getNext()) != null) { //до тех пор, пока не закончится список, прогоняется узел curNode
+            if (curNode.getValue().equals(o)) { //если значение curNode будет соответствовать значению удаляемого элемента, происходит остановка цикла
+                break;
+            }
+            prevNode = prevNode.getNext(); //prevNode прогоняется до того, как curNode будет соответствовать значению удаляемого элемента
+        }                                  //значение prevNode будет равняться элементу, стоящему до curNode, так как остановка цикла происходит раньше
+
+        if (curNode == null){ //если curNode - элемент без значения/ссылки, удалить его невозможно
+            return false;
+        }
+
+        prevNode.setNext(curNode.getNext()); //элементу, стоящему до удаляемого, присваиваем ссылку на элемент, что стоит после удаляемого
+        curNode.setNext(null); //у удаляемого элемента удаляем ссылку на следующий элемент
+        return true;
     }
 
     public void clear() {
@@ -103,6 +130,7 @@ public class MyLinkedList {
 
     public Object remove(int index) {
         checkIndex(index);                               //проверка индекса: если он корректен, в списке есть минимум один элемент
+
         if (index == 0) {                                //если индекс = 0 (удаление первого элемента)
             Object resValue = head.getValue();           //создается объект со значением первого элемента до дальнейшего возврата
             if (head.getNext() == null) {                //если значение второго (после head) элемента равняется null

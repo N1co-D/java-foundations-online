@@ -45,12 +45,16 @@ public class MyLinkedListPractice {
 
         System.out.println();
 
-        System.out.println("list.set(0, \"Bye\") = " + list.set(0, "Bye"));
-        System.out.println("list.set(3, \"Bye\") = " + list.set(3, "Bye"));
+        System.out.println("list.set(0, \"Bye1\") = " + list.set(0, "Bye1"));
+        System.out.println("list.set(3, \"Bye2\") = " + list.set(3, "Bye2"));
+        System.out.println("list = " + list);
 
         System.out.println();
 
+        System.out.println("list.remove(\"Bye1\") = " + list.remove("Bye1"));
+        System.out.println("list.remove(\"Student\") = " + list.remove("Student"));
         System.out.println("list = " + list);
+
     }
 
 }
