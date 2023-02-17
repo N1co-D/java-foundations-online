@@ -72,7 +72,7 @@ public class MyLinkedList {
             prevNode = prevNode.getNext(); //prevNode прогоняется до того, как curNode будет соответствовать значению удаляемого элемента
         }                                  //значение prevNode будет равняться элементу, стоящему до curNode, так как остановка цикла происходит раньше
 
-        if (curNode == null){ //если curNode - элемент без значения/ссылки, удалить его невозможно
+        if (curNode == null) { //если curNode - элемент без значения/ссылки, удалить его невозможно
             return false;
         }
 
@@ -181,11 +181,39 @@ public class MyLinkedList {
     }
 
     public int indexOf(Object o) {
-        return 0;
+        Node curNode = head;
+        if (head.getValue() == o) {
+            return 0;
+        }
+        int count = 0;
+        while ((curNode = curNode.getNext()) != null) {
+            if (curNode.getValue().equals(o)) {
+                return count;
+            } else {
+                count++;
+            }
+        }
+        return -1;
     }
 
     public int lastIndexOf(Object o) {
-        return 0;
+        Node curNode = head;
+        Node prevNode = head;
+        int count = 0;
+        int lastIndex = 0;
+        while (curNode.getNext() != null) {
+            if (curNode.getValue().equals(o)) {
+                lastIndex = count;
+            }
+            count++;
+            curNode = curNode.getNext();
+            prevNode = prevNode.getNext();
+        }
+
+        if (prevNode.getValue().equals(o)){
+            lastIndex = count;
+        }
+        return lastIndex;
     }
 
     @Override

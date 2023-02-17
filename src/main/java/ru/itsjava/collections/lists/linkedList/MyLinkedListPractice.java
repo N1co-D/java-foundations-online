@@ -55,6 +55,28 @@ public class MyLinkedListPractice {
         System.out.println("list.remove(\"Student\") = " + list.remove("Student"));
         System.out.println("list = " + list);
 
+        System.out.println();
+
+        System.out.println("list.indexOf(\"Bye2\") = " + list.indexOf("Bye2"));
+        System.out.println("list.indexOf(\"Hello 2\") = " + list.indexOf("Hello 2"));
+        System.out.println("list.indexOf(\"Student\") = " + list.indexOf("Student"));
+
+        System.out.println();
+
+        list.add("Student");
+        list.add("Teacher");
+        list.add("Student");
+        list.add("Teacher");
+        list.add("Hello 2");
+        System.out.println("list = " + list);
+
+        System.out.println();
+
+        System.out.println("list.lastIndexOf(\"Student\") = " + list.lastIndexOf("Student"));
+        System.out.println("list.lastIndexOf(\"Teacher\") = " + list.lastIndexOf("Teacher"));
+        System.out.println("list.lastIndexOf(\"Hello 2\") = " + list.lastIndexOf("Hello 2"));
+        System.out.println("list.lastIndexOf(\"Hello 3\") = " + list.lastIndexOf("Hello 3"));
+
     }
 
 }
