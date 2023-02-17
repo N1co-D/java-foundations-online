@@ -83,7 +83,11 @@ public class MyLinkedList {
 
     public void clear() {
         if (!isEmpty()) {
-            head = null;
+            while (head != null) {
+                for (int i = 0; i < size(); i++) {
+                    remove(i);
+                }
+            }
             System.out.println("Complete!");
         } else {
             System.out.println("Already empty!");
@@ -210,7 +214,7 @@ public class MyLinkedList {
             prevNode = prevNode.getNext();
         }
 
-        if (prevNode.getValue().equals(o)){
+        if (prevNode.getValue().equals(o)) {
             lastIndex = count;
         }
         return lastIndex;
