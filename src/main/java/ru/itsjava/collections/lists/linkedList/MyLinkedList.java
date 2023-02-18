@@ -81,13 +81,33 @@ public class MyLinkedList {
         return true;
     }
 
+    //В методе clear недостаточно обнулять head. Нужно всю цепочку разорвать, чтоб сборщик мусора все удалил,
+    //иначе без головы остальные звенья будут ссылаться друг на друга и не будут удалены, что может привести к переполнению памяти.
+//    public void clear() {
+//        if (!isEmpty()) {
+//            while (head != null) {
+//                for (int i = 0; i < size(); i++) {
+//                    remove(i);
+//                }
+//            }
+//            System.out.println("Complete!");
+//        } else {
+//            System.out.println("Already empty!");
+//        }
+//    }
+
     public void clear() {
         if (!isEmpty()) {
-            while (head != null) {
-                for (int i = 0; i < size(); i++) {
-                    remove(i);
-                }
+            Node curNode = head;
+            curNode = curNode.getNext();
+            Node prevNode = head;
+
+            while (curNode.getNext() != null) {
+                curNode = curNode.getNext();
+                prevNode.setNext(null);
             }
+
+            head = null;
             System.out.println("Complete!");
         } else {
             System.out.println("Already empty!");

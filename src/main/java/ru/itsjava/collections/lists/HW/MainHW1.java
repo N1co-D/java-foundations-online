@@ -3,6 +3,8 @@ package ru.itsjava.collections.lists.HW;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.Math.*;
+
 public class MainHW1 {
     public static void main(String[] args) {
 
@@ -38,8 +40,8 @@ public class MainHW1 {
 
         System.out.println("bookList1 = " + bookList1);
 
-        bookList1.add(2,irresistibleTheRiseOfAddictiveTechnologyAndTheBusinessOfKeepingUsHooked); // позиция 3 = индекс 2
-        bookList1.add(0,thePowerOfMomentsWhyCertainExperiencesHaveExtraordinaryImpact); // позиция 1 = индекс 0
+        bookList1.add(2, irresistibleTheRiseOfAddictiveTechnologyAndTheBusinessOfKeepingUsHooked); // позиция 3 = индекс 2
+        bookList1.add(0, thePowerOfMomentsWhyCertainExperiencesHaveExtraordinaryImpact); // позиция 1 = индекс 0
 
         bookList2.addAll(bookList1);
 
@@ -57,7 +59,7 @@ public class MainHW1 {
         System.out.println("bookList1.contains(mindsetTheNewPsychologyOfSuccess) = " + bookList1.contains(mindsetTheNewPsychologyOfSuccess));
 
         System.out.print("List: [ ");
-        for (Book bookElement:bookList1) {
+        for (Book bookElement : bookList1) {
             System.out.print(bookElement + "; ");
         }
         System.out.print("]");
