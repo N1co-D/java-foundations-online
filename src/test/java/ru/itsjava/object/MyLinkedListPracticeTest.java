@@ -87,6 +87,7 @@ public class MyLinkedListPracticeTest {
         MyArrayList list = new MyArrayList();
         list.add("Teacher");
         list.add(0, "Student");
+        Assertions.assertTrue(list.isCorrectIndex(0));
         Assertions.assertTrue(list.contains("Student"));
     }
 
