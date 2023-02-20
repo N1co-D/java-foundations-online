@@ -212,7 +212,7 @@ public class MyLinkedList {
         int count = 0;
         while ((curNode = curNode.getNext()) != null) {
             if (curNode.getValue().equals(o)) {
-                return count;
+                return count + 1;
             } else {
                 count++;
             }
