@@ -33,6 +33,14 @@ public class IteratorFruitHomework {
         fruits.put(russianWatermelons, "Jakov");
         fruits.put(africanWatermelons, "Izotov");
 
+        //HashSet, HashMap, ArrayList, LinkedHashSet, LinkedList - коллекции (классы). Set, Map, List - интерфейсы. Иерархия!
+        //Map.Entry - связка из ключа и значения объекта Map
+        //entrySet - метод по возврату Set из связки <Map.Entry>
+        for (Map.Entry<Fruit, String> pair : fruits.entrySet()) {
+            System.out.println(pair.getKey() + ": " + pair.getValue());
+        }
+
+        System.out.println("-----------------------------------------------------------------------------------------");
         for (Fruit keyFruit : fruits.keySet()) {
             if (fruits.get(keyFruit).length() > 5) {
                 System.out.println(fruits.get(keyFruit));
@@ -42,7 +50,7 @@ public class IteratorFruitHomework {
         System.out.println("-----------------------------------------------------------------------------------------");
         int countOfMelons = 0;
         for (Fruit keyFruit : fruits.keySet()) {
-            if (keyFruit.getName() == "Дыня") {
+            if (keyFruit.getName().equals("Дыня") ) {
                 countOfMelons++;
             }
         }
@@ -51,7 +59,7 @@ public class IteratorFruitHomework {
         System.out.println("-----------------------------------------------------------------------------------------");
         int countOfWatermelons = 0;
         for (Fruit keyFruit : fruits.keySet()) {
-            if ((keyFruit.getName().equals("Арбуз")) && (countOfWatermelons != 2)) {
+            if ((keyFruit.getName().equalsIgnoreCase("Арбуз")) && (countOfWatermelons != 2)) {
                 countOfWatermelons++;
             } else {
                 System.out.println(keyFruit.getName());
@@ -61,6 +69,7 @@ public class IteratorFruitHomework {
         System.out.println("-----------------------------------------------------------------------------------------");
         int countOfLetterA = 0;
         for (Fruit keyFruit : fruits.keySet()) {
+//            if ((keyFruit.getName().charAt(0) == "А" && (countOfLetterA != 2)) {
             if ((keyFruit.getName().startsWith("А")) && (countOfLetterA != 2)) {
                 countOfLetterA++;
             } else {
@@ -70,7 +79,7 @@ public class IteratorFruitHomework {
 
         System.out.println("-----------------------------------------------------------------------------------------");
         for (Fruit keyFruit : fruits.keySet()) {
-            if ((keyFruit.getName().equals("арбуз")) || (keyFruit.getName().equals("Арбуз ")) || (keyFruit.getName().equals("АРБУЗ"))) {
+            if (keyFruit.getName().equalsIgnoreCase("Арбуз")) {
                 System.out.println(keyFruit.getName());
                 break;
             }
@@ -79,7 +88,7 @@ public class IteratorFruitHomework {
         System.out.println("-----------------------------------------------------------------------------------------");
         Map<Fruit, String> allMelonsAndWatermelons = new HashMap<>();
         for (Fruit keyFruit : fruits.keySet()) {
-            if ((keyFruit.getName().equals("Арбуз")) || (keyFruit.getName().equals("АРБУЗ")) || (keyFruit.getName().equals("Дыня"))) {
+            if ((keyFruit.getName().equalsIgnoreCase("Арбуз")) || (keyFruit.getName().equalsIgnoreCase("Дыня"))) {
                 allMelonsAndWatermelons.put(keyFruit, fruits.get(keyFruit));
             }
         }
