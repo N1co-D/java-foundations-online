@@ -69,8 +69,8 @@ public class IteratorFruitHomework {
         System.out.println("-----------------------------------------------------------------------------------------");
         int countOfLetterA = 0;
         for (Fruit keyFruit : fruits.keySet()) {
-//            if ((keyFruit.getName().charAt(0) == "А" && (countOfLetterA != 2)) {
-            if ((keyFruit.getName().startsWith("А")) && (countOfLetterA != 2)) {
+            if ((keyFruit.getName().charAt(0) == 'А' && (countOfLetterA != 2))) {
+//            if ((keyFruit.getName().startsWith("А")) && (countOfLetterA != 2)) {
                 countOfLetterA++;
             } else {
                 System.out.println(keyFruit.getName());
