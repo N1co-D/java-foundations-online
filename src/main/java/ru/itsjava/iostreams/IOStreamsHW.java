@@ -16,7 +16,7 @@ public class IOStreamsHW {
             fileNotFoundException.printStackTrace();
         }
 
-        List fileHW1List = new ArrayList<>();
+        List<Object> fileHW1List = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(fileHW1))) {
             String input;
@@ -38,7 +38,7 @@ public class IOStreamsHW {
             fileNotFoundException.printStackTrace();
         }
 
-        List fileHW2List = new ArrayList<>();
+        List<Object> fileHW2List = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new FileReader(fileHW2))) {
             String input;
@@ -51,21 +51,37 @@ public class IOStreamsHW {
 
         System.out.println("fileHW2List = " + fileHW2List);
 
+//        try (PrintWriter printWriter = new PrintWriter(fileHW1)) {
+//            for (int i = 0; i < fileHW2List.size(); i++) {
+//                printWriter.println(fileHW2List.get(i));
+//            }
+//        } catch (FileNotFoundException fileNotFoundException) {
+//            fileNotFoundException.printStackTrace();
+//        }
+
         try (PrintWriter printWriter = new PrintWriter(fileHW1)) {
-            for (int i = 0; i < fileHW2List.size(); i++) {
-                printWriter.println(fileHW2List.get(i));
+            for (Object o : fileHW2List) {
+                printWriter.println(o);
             }
         } catch (FileNotFoundException fileNotFoundException) {
             fileNotFoundException.printStackTrace();
         }
 
         try (PrintWriter printWriter = new PrintWriter(fileHW2)) {
-            for (int i = 0; i < fileHW1List.size(); i++) {
-                printWriter.println(fileHW1List.get(i));
+            for (Object o : fileHW1List) {
+                printWriter.println(o);
             }
         } catch (FileNotFoundException fileNotFoundException) {
             fileNotFoundException.printStackTrace();
         }
+
+//        try (PrintWriter printWriter = new PrintWriter(fileHW2)) {
+//            for (int i = 0; i < fileHW1List.size(); i++) {
+//                printWriter.println(fileHW1List.get(i));
+//            }
+//        } catch (FileNotFoundException fileNotFoundException) {
+//            fileNotFoundException.printStackTrace();
+//        }
 
         System.out.println();
 
