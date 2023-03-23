@@ -2,9 +2,9 @@ package ru.itsjava.threads;
 
 public class ThreadPracticeHW {
     public static void main(String[] args) throws InterruptedException {
-        ThreadPrinter threadPrinterFirst = new ThreadPrinter("Java", 1000L);
+        ThreadPrinterHW threadPrinterFirst = new ThreadPrinterHW("Java", 1000L);
 
-        PrinterRunnable printerRunnable = new PrinterRunnable("Python", 2000L);
+        PrinterRunnableHW printerRunnable = new PrinterRunnableHW("Python", 2000L);
         Thread threadSecond = new Thread(printerRunnable);
 
         System.out.println("Задание №1. Начало!");
@@ -18,7 +18,7 @@ public class ThreadPracticeHW {
 
         System.out.println();
 
-        PrinterRunnable printerMassageRunnable = new PrinterRunnable("Practice Java!", 5000L);
+        PrinterRunnableHW printerMassageRunnable = new PrinterRunnableHW("Practice Java!", 5000L);
         Thread threadMassage = new Thread(printerMassageRunnable);
 
         System.out.println("Задание №2. Начало!");
