@@ -1,10 +1,10 @@
-package ru.itsjava.threads;
+package ru.itsjava.threads.lecture1;
 
 import lombok.AllArgsConstructor;
 import lombok.SneakyThrows;
 
 @AllArgsConstructor
-public class ThreadPrinter extends Thread {
+public class PrinterRunnableHW implements Runnable {
     private final String message;
     private final long delay;
 
