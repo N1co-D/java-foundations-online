@@ -4,7 +4,7 @@ import java.sql.*;
 
 public class UsersJdbcImpl implements UsersDao {
     public static final String DB_URL = "jdbc:MySql://127.0.0.1:3306/schema_java?serverTimezone=UTC";
-    public static final String DB_LOGIN = "root";
+    public static final String DB_LOGIN = "";
     public static final String DB_PASSWORD = "";
 
     @Override
