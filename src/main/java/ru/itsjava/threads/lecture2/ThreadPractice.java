@@ -1,7 +1,7 @@
 package ru.itsjava.threads.lecture2;
 
 public class ThreadPractice {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Runnable anonymousRunnable = new Runnable() {
             @Override
             public void run() {
@@ -34,7 +34,7 @@ public class ThreadPractice {
             for (int i = 0; i < 5; i++) {
                 System.out.println("Hello from the dream");
                 try {
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
@@ -44,6 +44,7 @@ public class ThreadPractice {
         thread1.setDaemon(true);
         thread1.start();
 
+        Thread.sleep(3000);
         System.out.println("End main thread");
     }
 }

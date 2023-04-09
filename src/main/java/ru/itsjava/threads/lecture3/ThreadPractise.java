@@ -10,14 +10,14 @@ public class ThreadPractise {
 //            obj.notify();
 //        }
 
-//        ThreadPractise threadPractise = new ThreadPractise();
-//        MyThread thread1 = new MyThread(1, threadPractise);
-//        MyThread thread2 = new MyThread(2, threadPractise);
-//        MyThread thread3 = new MyThread(3, threadPractise);
-//
-//        thread1.start();
-//        thread2.start();
-//        thread3.start();
+        ThreadPractise threadPractise = new ThreadPractise();
+        MyThread thread1 = new MyThread(1, threadPractise);
+        MyThread thread2 = new MyThread(2, threadPractise);
+        MyThread thread3 = new MyThread(3, threadPractise);
+
+        thread1.start();
+        thread2.start();
+        thread3.start();
 
 //        Thread.currentThread().join();
     }
