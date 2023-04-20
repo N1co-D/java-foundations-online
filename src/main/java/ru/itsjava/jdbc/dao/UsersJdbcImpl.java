@@ -7,16 +7,29 @@ public class UsersJdbcImpl implements UsersDao {
     public static final String DB_LOGIN = "";
     public static final String DB_PASSWORD = "";
 
+//    @Override
+//    public int getAgeByUserName(String name) {
+//        try (Connection connection = DriverManager.getConnection(DB_URL, DB_LOGIN, DB_PASSWORD);
+//             Statement statement = connection.createStatement()
+//        ) {
+//            ResultSet resultSet = statement.executeQuery("select age from schema_java.users where name = '" + name + "';");
+//            resultSet.next();
+//            return resultSet.getInt("age");
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
+
     @Override
-    public int getAgeByUserName(String name) {
+    public int getAgeByUserName(String name) throws SQLException {
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_LOGIN, DB_PASSWORD);
-             Statement statement = connection.createStatement()
+             PreparedStatement preparedStatement = connection.prepareStatement("select age from schema_java.users where name = ?")
         ) {
-            ResultSet resultSet = statement.executeQuery("select age from schema_java.users where name = '" + name + "';");
+            preparedStatement.setString(1, "Tom");
+            ResultSet resultSet = preparedStatement.executeQuery();
             resultSet.next();
             return resultSet.getInt("age");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
     }
+
 }
